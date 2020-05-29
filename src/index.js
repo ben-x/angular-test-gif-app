@@ -1,12 +1,14 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import "./index.css";
-import Route from "./routes/route";
+import WebRoute from "./routes/webRoute";
+import Header from "components/header";
 import * as serviceWorker from "./serviceWorker";
 
 ReactDOM.render(
     <React.StrictMode>
-        <Route />
+        <Header />
+        <WebRoute />
     </React.StrictMode>,
     document.getElementById("root")
 );
