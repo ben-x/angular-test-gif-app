@@ -1,11 +1,12 @@
 import React, { Component } from "react";
-import { Row, Container } from "react-bootstrap";
+import { Row, Container, CardDeck } from "react-bootstrap";
 import Search from "components/search";
 import * as actions from "redux/actions";
 import { bindActionCreators } from "redux";
 import { connect } from "react-redux";
 import ImageCard from "components/imageCard";
 import InfiniteScroll from "react-infinite-scroll-component";
+import Loading from "components/loader";
 
 class Home extends Component {
     constructor() {
@@ -15,6 +16,7 @@ class Home extends Component {
             offset: 0,
             total: 0,
             hasMore: true,
+            loading: false,
         };
 
         this.bindInput = this.bindInput.bind(this);
@@ -22,11 +24,13 @@ class Home extends Component {
         this.loadMore = this.loadMore.bind(this);
     }
     searchImage() {
+        this.setState({ loading: true });
         fetch(
             `https://api.giphy.com/v1/gifs/search?api_key=AczTVuJ5qQDXC4PrEwvS4Hr4qyNVGIGQ&q=${this.state.search}&limit=20&offset=${this.state.offset}`
         )
             .then((data) => data.json())
             .then((data) => {
+                this.setState({ loading: false });
                 this.props.actions.fetchImages(data.data);
                 this.setState({
                     offset: this.state.offset + 20,
@@ -34,6 +38,7 @@ class Home extends Component {
                 });
             })
             .catch((error) => {
+                this.setState({ loading: false });
                 console.log(error);
             });
     }
@@ -72,14 +77,20 @@ class Home extends Component {
                         loader={<h4>Loading...</h4>}
                     >
                         <Row>
-                            {this.props.giphys.giphysImages.map((data) => {
-                                return <ImageCard key={data.id} data={data} />;
-                            })}
+                            <CardDeck>
+                                {this.props.giphys.giphysImages.map((data) => {
+                                    return (
+                                        <ImageCard key={data.id} data={data} />
+                                    );
+                                })}
+                            </CardDeck>
                         </Row>
                     </InfiniteScroll>
                 ) : (
                     " "
                 )}
+
+                {this.state.loading ? <Loading /> : ""}
             </Container>
         );
     }
