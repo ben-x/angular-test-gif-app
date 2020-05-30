@@ -20,7 +20,12 @@ function search(props) {
                         onChange={(event) => props.bindInput(event)}
                     />
                     <InputGroup.Append>
-                        <Button variant="outline-secondary">Search</Button>
+                        <Button
+                            variant="outline-secondary"
+                            onClick={props.search}
+                        >
+                            Search
+                        </Button>
                     </InputGroup.Append>
                 </InputGroup>
             </Form>
