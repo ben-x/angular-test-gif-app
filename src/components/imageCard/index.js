@@ -5,7 +5,7 @@ import { Card, Col } from "react-bootstrap";
 
 export default function ImageCard(props) {
     return (
-        <Col xs={2} sm={4} md={3}>
+        <Col sm={6} md={3}>
             <Link to={`/view/${props.data.id}`}>
                 <Card>
                     <Card.Img
