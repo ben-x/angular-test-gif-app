@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { select } from '@angular-redux/store';
 
 @Component({
   selector: 'app-results-list',
@@ -6,6 +7,8 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./results-list.component.css']
 })
 export class ResultsListComponent implements OnInit {
+  @select() allResults;
+  @select() err;
 
   constructor() { }
 

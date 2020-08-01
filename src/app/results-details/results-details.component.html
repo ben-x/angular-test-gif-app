@@ -1,0 +1,20 @@
+<div>
+  <a routerLink=""> &larr;</a>
+  <h3>Result Details</h3>
+</div>
+<ng-container *ngFor="let res of (allResults | async)">
+  <div *ngIf="res.id === resultId">
+    <div class="movie-card">
+    
+      <div class="container">
+    
+        <a><img src="http://image.tmdb.org/t/p/w185_and_h278_bestv2{{res.poster_path}}" alt="cover" class="cover" /></a>
+          
+        <h5>{{res.title}} </h5>
+        <p class="likes">{{res.vote_count}} likes</p>  
+        <p>{{res.overview}}</p> 
+        
+      </div> 
+    </div> <!-- end movie-card -->
+  </div>
+</ng-container>

@@ -1,4 +1,20 @@
 <div>
     <!-- Implement result list here -->
-    Results List
+    <ng-container *ngIf="(allResults | async).length === 0" >
+        <div class="text-center display_screen">
+          <h3 >Hello There!</h3>
+          <p>You haven't searched for a movie yet.</p>
+          <p>Search for a movie by typing a keyword in the searchbox above.</p>
+        </div>
+      </ng-container>
+    
+      <div class="error text-center">
+        <p>{{err | async}}</p>
+      </div>
+    
+      <div class="row">
+        <div *ngFor="let res of (allResults | async)" class="col-sm-3 my-2">
+            <app-results [res]='res'></app-results>
+        </div>
+      </div>
 </div>
