@@ -9,8 +9,10 @@ const SearchDiv = styled.div`
 
 const SearchBox = styled.input`
   border-radius:15px;
-  padding: 10px;
-  border: solid 2px #f5f7f6;
+  padding: 15px;
+  border: solid 2px #c2c2c2;
+  flex-basis:45%;
+  color: black;
 `;
 
 export {SearchDiv, SearchBox}

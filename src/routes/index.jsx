@@ -5,7 +5,6 @@ import HomePage from '../views/homePage/homePage';
 
 const Routes = () => (
   <Router>
-    <Header />
     <Switch>
       <Route exact path="/" component={HomePage} />
     </Switch>

@@ -2,11 +2,11 @@ import React from 'react';
 import {SearchDiv, SearchBox} from './SearchBar.styles';
 
 
-const SearchBar = () =>{
+const SearchBar = ({handleChange}) =>{
 
   return (
     <SearchDiv>
-      <SearchBox placeholder='search here' required/>
+      <SearchBox placeholder='search here' onChange={handleChange}/>
     </SearchDiv>
   )
 }
