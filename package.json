@@ -1,51 +1,122 @@
 {
-  "name": "gif-app",
-  "version": "0.0.0",
+  "name": "riby-test",
+  "version": "1.0.0",
+  "description": "Frontend giphy search",
+  "main": "index.js",
   "scripts": {
-    "ng": "ng",
-    "start": "ng serve",
-    "build": "ng build",
-    "test": "ng test",
-    "lint": "ng lint",
-    "e2e": "ng e2e"
+    "test": "jest -u --coverage",
+    "test:coverage": "jest --coverage --colors && cat ./coverage/lcov.info",
+    "test:watch": "jest -u --coverage --watch",
+    "dev": "webpack-dev-server  --open --hot",
+    "lint": "eslint src --fix"
   },
-  "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ebzeal/angular-test-gif-app.git"
+  },
+  "author": "Olusola Ajayi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ebzeal/angular-test-gif-app/issues"
+  },
+  "homepage": "https://github.com/ebzeal/angular-test-gif-app#readme",
   "dependencies": {
-    "@angular/animations": "~7.2.0",
-    "@angular/common": "~7.2.0",
-    "@angular/compiler": "~7.2.0",
-    "@angular/core": "~7.2.0",
-    "@angular/forms": "~7.2.0",
-    "@angular/platform-browser": "~7.2.0",
-    "@angular/platform-browser-dynamic": "~7.2.0",
-    "@angular/router": "~7.2.0",
-    "bootstrap": "^4.3.1",
-    "core-js": "^2.5.4",
-    "jquery": "^3.4.1",
-    "popper": "^1.0.1",
-    "rxjs": "~6.3.3",
-    "tslib": "^1.9.0",
-    "zone.js": "~0.8.26"
+    "@babel/runtime": "^7.8.7",
+    "axios": "^0.18.0",
+    "moxios": "^0.4.0",
+    "react": "^16.13.0",
+    "react-dom": "^16.6.3",
+    "react-helmet": "^5.2.0",
+    "react-router-dom": "^4.3.1",
+    "styled-components": "^5.0.1"
   },
   "devDependencies": {
-    "@angular-devkit/build-angular": "~0.13.0",
-    "@angular/cli": "~7.3.9",
-    "@angular/compiler-cli": "~7.2.0",
-    "@angular/language-service": "~7.2.0",
-    "@types/node": "~8.9.4",
-    "@types/jasmine": "~2.8.8",
-    "@types/jasminewd2": "~2.0.3",
-    "codelyzer": "~4.5.0",
-    "jasmine-core": "~2.99.1",
-    "jasmine-spec-reporter": "~4.2.1",
-    "karma": "~4.0.0",
-    "karma-chrome-launcher": "~2.2.0",
-    "karma-coverage-istanbul-reporter": "~2.0.1",
-    "karma-jasmine": "~1.1.2",
-    "karma-jasmine-html-reporter": "^0.2.2",
-    "protractor": "~5.4.0",
-    "ts-node": "~7.0.0",
-    "tslint": "~5.11.0",
-    "typescript": "~3.2.2"
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.7",
+    "@babel/node": "^7.8.7",
+    "@babel/plugin-proposal-class-properties": "^7.8.3",
+    "@babel/plugin-transform-regenerator": "^7.8.7",
+    "@babel/plugin-transform-runtime": "^7.8.3",
+    "@babel/preset-env": "^7.8.7",
+    "@babel/preset-react": "^7.8.3",
+    "@babel/preset-typescript": "^7.8.3",
+    "@svgr/webpack": "^5.3.0",
+    "axios-mock-adapter": "^1.17.0",
+    "babel-eslint": "^10.1.0",
+    "babel-loader": "^8.0.6",
+    "check-prop-types": "^1.1.2",
+    "coveralls": "^3.0.2",
+    "css-loader": "^2.1.0",
+    "enzyme": "^3.8.0",
+    "enzyme-adapter-react-16": "^1.9.0",
+    "enzyme-to-json": "^3.3.5",
+    "eslint": "^5.3.0",
+    "eslint-config-airbnb": "^17.1.0",
+    "eslint-config-prettier": "^4.0.0",
+    "eslint-plugin-import": "^2.16.0",
+    "eslint-plugin-jsx-a11y": "^6.2.1",
+    "eslint-plugin-prettier": "^3.0.1",
+    "eslint-plugin-react": "^7.12.4",
+    "file-loader": "^3.0.1",
+    "html-webpack-plugin": "^3.2.0",
+    "jest": "^24.3.1",
+    "jest-localstorage-mock": "^2.4.0",
+    "mini-css-extract-plugin": "^0.5.0",
+    "moxios": "^0.4.0",
+    "node-sass": "^4.11.0",
+    "prettier": "^1.16.4",
+    "prop-types": "^15.6.2",
+    "react-test-renderer": "^16.8.1",
+    "sass-loader": "^7.1.0",
+    "style-loader": "^0.23.1",
+    "svg-inline-loader": "^0.8.0",
+    "svg-url-loader": "^2.3.2",
+    "url-loader": "^1.1.2",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1",
+    "webpack-dev-server": "^3.1.10"
+  },
+  "jest": {
+    "clearMocks": true,
+    "collectCoverageFrom": [
+      "src/**/*.{js,jsx,mjs}",
+      "!<rootDir>/node_modules/",
+      "!src/index.jsx",
+      "!src/App.jsx",
+      "!src/store/index.js",
+      "!/src/utils/axiosSetup.js",
+      "!/src/utils/testUtils.js"
+    ],
+    "coverageDirectory": "coverage",
+    "moduleFileExtensions": [
+      "js",
+      "json",
+      "jsx"
+    ],
+    "setupFiles": [
+      "<rootDir>/enzyme.config.js",
+      "jest-localstorage-mock"
+    ],
+    "moduleNameMapper": {
+      "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/assetsTransformer.js",
+      "\\.(css|less|sass|scss)$": "<rootDir>/assetsTransformer.js"
+    },
+    "testEnvironment": "jsdom",
+    "testMatch": [
+      "**/__tests__/**/*.js?(x)",
+      "**/?(*.)+(spec|test).js?(x)"
+    ],
+    "testPathIgnorePatterns": [
+      "\\\\node_modules\\\\"
+    ],
+    "testURL": "http://localhost",
+    "transformIgnorePatterns": [
+      "<rootDir>/node_modules/"
+    ],
+    "coveragePathIgnorePatterns": [
+      "/src/utils/axiosSetup.js",
+      "!/src/utils/testUtils.js"
+    ],
+    "verbose": false
   }
 }

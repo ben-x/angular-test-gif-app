@@ -1,0 +1,9 @@
+{
+  "addons": [],
+  "buildpacks": [],
+  "env": {},
+  "formation": {},
+  "name": "ebzeal-store-manager-frontend",
+  "scripts": {},
+  "stack": "heroku-18"
+}
