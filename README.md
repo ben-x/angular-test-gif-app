@@ -1,6 +1,7 @@
 # GifApp
 
 This project was generated with React and Webpack
+ https://nervous-ardinghelli-3b5611.netlify.app/
 
 ## Build
 
@@ -36,7 +37,7 @@ This project was generated with React and Webpack
 
 # Demo
 
-- 
+- View the demo  - https://nervous-ardinghelli-3b5611.netlify.app/
 
 # Contributing
 
