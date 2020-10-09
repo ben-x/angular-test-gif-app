@@ -1,0 +1,2 @@
+ - add pagination
+ - add dropdown to shown amount of data needed per page
