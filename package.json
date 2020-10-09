@@ -4,9 +4,8 @@
   "description": "Frontend giphy search",
   "main": "index.js",
   "scripts": {
-    "test": "jest -u --coverage",
-    "test:coverage": "jest --coverage --colors && cat ./coverage/lcov.info",
-    "test:watch": "jest -u --coverage --watch",
+    "test": "jest -u",
+    "test:watch": "jest -u --watch",
     "dev": "webpack-dev-server  --open --hot",
     "lint": "eslint src --fix"
   },

@@ -26,7 +26,6 @@ const HomePage = () =>{
     page,
     gif,
   } = values;
-  // const [searchField, setSearchField] = useState('')
   
     async function fetchData() {
     try {
@@ -35,7 +34,7 @@ const HomePage = () =>{
           'Content-Type': 'text/plain' 
         }
       });
-      setValues({...values, searchResult:response.data, loading:false})
+      setValues({...values, searchResult:response.data, loading:false, gif:{}})
     } catch (error) {
       console.error(error);
     }
@@ -68,12 +67,12 @@ const HomePage = () =>{
 
   return (
   <>
-    <SearchBar  handleChange={handleChange} onSubmit={onSubmit}/>
+    <SearchBar  handleChange={handleChange} onSubmit={onSubmit} data-test='searchbar'/>
     {loading ? <img src={loaderIcon} alt='loading items' style={{ margin:'20% 45%' }} /> :
     gif?.slug ?
-    <GifDetails data={gif} clearGif={clearGif}/> :
+    <GifDetails data={gif} clearGif={clearGif} data-test='gifdetails'/> :
     <>
-    <GifBox data={searchResult.data} getGif={getGifDetails}/>
+    <GifBox data={searchResult.data} getGif={getGifDetails} data-test='gifbox'/>
     {searchResult.data ?
     <PaginationBar limit={limit} page={page} pagination={searchResult.pagination} setPage={setPage}/>
     : null}

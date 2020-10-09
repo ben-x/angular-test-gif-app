@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GifCard /> renders the component successfully 1`] = `ShallowWrapper {}`;
