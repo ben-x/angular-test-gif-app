@@ -6,7 +6,8 @@
   "scripts": {
     "test": "jest -u",
     "test:watch": "jest -u --watch",
-    "dev": "webpack-dev-server  --open --hot",
+    "build": "webpack --config webpack.prod.js",
+    "dev": "webpack-dev-server  --open --hot --config webpack.dev.js",
     "lint": "eslint src --fix"
   },
   "repository": {
@@ -18,16 +19,18 @@
   "bugs": {
     "url": "https://github.com/ebzeal/angular-test-gif-app/issues"
   },
-  "homepage": "https://github.com/ebzeal/angular-test-gif-app#readme",
+  "homepage": "https://ebzeal.github.io/angular-test-gif-app/",
   "dependencies": {
     "@babel/runtime": "^7.8.7",
     "axios": "^0.18.0",
+    "gh-pages": "^3.1.0",
     "moxios": "^0.4.0",
     "react": "^16.13.0",
     "react-dom": "^16.6.3",
     "react-helmet": "^5.2.0",
     "react-router-dom": "^4.3.1",
-    "styled-components": "^5.0.1"
+    "styled-components": "^5.0.1",
+    "terser-webpack-plugin": "^4.2.3"
   },
   "devDependencies": {
     "@babel/cli": "^7.8.4",

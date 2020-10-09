@@ -1,14 +1,20 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
+const TerserPlugin = require("terser-webpack-plugin");
 
 module.exports = {
     entry: path.join(__dirname, "src", "index.jsx"),
     output: {
-        path: path.join(__dirname, "dist"),
+        path: path.join(__dirname, "build"),
         filename: "app.bundle.js",
         publicPath: "/"
     },
-    mode: process.env.NODE_ENV || "development",
+    mode: "production",
+    devtool: "source-map",
+    optimization: {
+        minimize: true,
+        minimizer: [new TerserPlugin()]
+    },
     module: {
         rules: [
             {

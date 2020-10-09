@@ -7,6 +7,9 @@ This project was generated with React and Webpack
  - npm run dev. 
   - This runs the development build
 
+ - npm run build. 
+  - This runs the production build
+
 ## Running unit tests
 
  - npm run t
