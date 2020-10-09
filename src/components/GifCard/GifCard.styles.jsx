@@ -1,9 +1,10 @@
 import styled from 'styled-components';
 
-const GifCardDiv = styled.div`
+const GifCardDiv = styled.img`
   border-radius:5px;
-  padding: 15px;
-  border: solid 2px #c2c2c2;
+  max-width: 280px;
+  max-height: 300px;
+  margin: 0px auto;
 `;
 
 export {GifCardDiv}

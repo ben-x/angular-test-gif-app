@@ -1,17 +1,18 @@
 import React from 'react';
+import {withRouter} from 'react-router-dom';
+
 import {GifBoxDiv} from './GifBox.styles'
 
 import GifCard from '../GifCard/GifCard'
 
-const GifBox = () => {
+const GifBox = ({data}) => {
   return (
     <GifBoxDiv>
-      <GifCard />
-      <GifCard />
-      <GifCard />
-      <GifCard />
-      <GifCard />
-      <GifCard />
+      {
+        data?.map(result=>(
+          <GifCard key={data.indexOf(result) } data={result} />
+        ))
+      }
     </GifBoxDiv>
   )
 };
