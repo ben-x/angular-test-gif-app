@@ -61,14 +61,25 @@ a {
   box-sizing: border-box;
 }
 
-#notify {
-  position: absolute;
-  top:20%;
-  right: 20%;
-  background-color: orange;
-  color: black;
-  padding: 1%;
-  border-radius:5px;
+
+.pagesNumbered {
+  display: inline-block;
+  background-color: #E9E8E8;
+  padding: 3px 10px;
+  margin: 10px 5px 20px 5px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.pagesNumbered:hover {
+  background-color: #898787;
+}
+
+.activePage {
+  background-color: #898787;
+  font-size: 22px;
+  padding: 3px 10px;
+  margin: 10px 5px 20px 5px;
+
 }
 
 

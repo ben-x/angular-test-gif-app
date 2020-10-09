@@ -5,10 +5,6 @@ import {GifBoxDiv} from './GifBox.styles'
 import GifCard from '../GifCard/GifCard'
 
 const GifBox = ({data, getGif}) => {
-  // const getGifDetails = () => {
-  //   getGif(data.slug);
-  // }
-  console.log("GifBox -> data", data)
   return (
     <GifBoxDiv>
       {

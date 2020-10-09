@@ -4,6 +4,7 @@ import axios from 'axios'
 import SearchBar from '../../components/SearchBar/SearchBar';
 import GifBox from '../../components/GifBox/GifBox';
 import GifDetails from '../../components/GifDetails/GifDetails';
+import PaginationBar from '../../components/Pagination/PaginationBar'
 
 import loaderIcon from "../../assets/loader.gif";
 
@@ -14,22 +15,22 @@ const HomePage = () =>{
     searchField,
     loading: false,
     page: 1,
-    modalIsOpen: false,
+    limit:25,
     gif: {}
   });
   const {
     searchResult,
     searchField,
     loading,
+    limit,
     page,
-    modalIsOpen,
     gif,
   } = values;
   // const [searchField, setSearchField] = useState('')
   
     async function fetchData() {
     try {
-      const response = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=deokzgUjxm6QHQdp3H3aca1LSZcCpucc&q=${searchField}&limit=25&offset=${page-1}&rating=Y&lang=en`, {
+      const response = await axios.get(`https://api.giphy.com/v1/gifs/search?api_key=deokzgUjxm6QHQdp3H3aca1LSZcCpucc&q=${searchField}&limit=25&offset=${limit *(page-1)}&rating=Y&lang=en`, {
         headers: {
           'Content-Type': 'text/plain' 
         }
@@ -39,7 +40,6 @@ const HomePage = () =>{
       console.error(error);
     }
   }
-  console.log("HomePage -> values", values)
 
   
   const onSubmit = e => {
@@ -47,6 +47,10 @@ const HomePage = () =>{
     e.preventDefault();
     fetchData();
   };
+  useEffect(() => {
+    setValues({...values, loading:true})
+    fetchData();
+}, [page])
 
 
   
@@ -55,13 +59,12 @@ const HomePage = () =>{
     };
 
     const getGifDetails = (slug) =>{
-      console.log("getGifDetails -> slug", slug)
-      console.log("getGifDetails -> searchResult.data", searchResult.data)
       const getGif = searchResult.data.find(gif => gif.slug === slug);
       setValues({...values, gif:getGif})
     }
 
     const clearGif = () => setValues({...values, gif:{}})
+    const setPage = (page) => setValues({...values, page})
 
   return (
   <>
@@ -69,7 +72,12 @@ const HomePage = () =>{
     {loading ? <img src={loaderIcon} alt='loading items' style={{ margin:'20% 45%' }} /> :
     gif?.slug ?
     <GifDetails data={gif} clearGif={clearGif}/> :
+    <>
     <GifBox data={searchResult.data} getGif={getGifDetails}/>
+    {searchResult.data ?
+    <PaginationBar limit={limit} page={page} pagination={searchResult.pagination} setPage={setPage}/>
+    : null}
+    </>
 }
   </>
 )};

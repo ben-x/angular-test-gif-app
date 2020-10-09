@@ -3,8 +3,6 @@ import React from 'react';
 import {GifPageDetails, GifPageimage, GifPageDiv} from './GifDetails.styles'
 
 const GifDetails = ({data, clearGif}) => {
-console.log("data", data)
-  
   return(
   <>
  <h2 onClick={clearGif} style={{ cursor:'pointer' }}> <i class="fa fa-arrow-left" aria-hidden="true"></i> &nbsp; Back</h2> 
