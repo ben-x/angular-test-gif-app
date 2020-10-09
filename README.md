@@ -4,11 +4,12 @@ This project was generated with React and Webpack
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ - npm run dev. 
+  - This runs the development build
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ - npm run t
 
 # Installation
 
