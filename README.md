@@ -1,27 +1,48 @@
 # GifApp
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.3.9.
-
-## Development server
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
-
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+This project was generated with React and Webpack
+ https://nervous-ardinghelli-3b5611.netlify.app/
 
 ## Build
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
+ - npm run dev. 
+  - This runs the development build
+
+ - npm run build. 
+  - This runs the production build
 
 ## Running unit tests
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+ - npm run t
 
-## Running end-to-end tests
+# Installation
 
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
+- use `git clone https://github.com/ebzeal/angular-test-gif-app` to copy the codes into your repository/local computer to acccess the codes
+- npm init
+- To run npm run start
 
-## Further help
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+# Technologies
+
+- HTML
+- CSS
+- JavaScript
+- React JS
+- Styled Components
+
+# Features
+
+- Responsiveness
+- Pagination
+
+# Demo
+
+- View the demo  - https://nervous-ardinghelli-3b5611.netlify.app/
+
+# Contributing
+
+1. Fork it!
+2. Create your feature branch: git checkout -b my-new-feature
+3. Commit your changes: git commit -am 'Add some feature'
+4. Push to the branch: git push origin my-new-feature
+5. Submit a pull request :D

@@ -1,0 +1,3 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Article Banner Child components should render Should render successfully 1`] = `ShallowWrapper {}`;
